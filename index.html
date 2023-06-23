@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue App</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
     <div class="app">
-        <div>
-            <label for="goal">goal</label>
-            <input type="text" id="goal"/>
-            <button>add goal</button>
-        </div>
-        <ul>
-
-        </ul>
-
+      <div>
+        <label for="goal">goal</label>
+        <input type="text" id="goal" v-model="enteredValue" />
+        <button v-on:click="addGoal">add goal</button>
+      </div>
+      <ul>
+        <li v-for="goal in goals">{{goal}}</li>
+      </ul>
     </div>
-
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="vue.js"></script>
-</body>
+  </body>
 </html>
